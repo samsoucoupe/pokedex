@@ -10,10 +10,13 @@ class pokemon:
         self.type_pokemon=self.getpokemon_fr["apiTypes"]
         #self.type_pokemon = self.getpokemon["types"][0]["type"]["name"]
         self.type_pokemon1=self.type_pokemon[0]["name"]
+        self.type_pokemon1_assests=self.type_pokemon[0]["image"]
         if len(self.type_pokemon) > 1:
             self.type_pokemon2 = self.type_pokemon[1]["name"]
+            self.type_pokemon2_assests=self.type_pokemon[1]["image"]
         else:
             self.type_pokemon2 = " "
+            self.type_pokemon2_assests=" "
 
         self.image = self.getpokemon["sprites"]["front_default"]
         self.image_shiny = self.getpokemon["sprites"]["front_shiny"]
@@ -22,12 +25,12 @@ class pokemon:
         self.defense = self.getpokemon["stats"][2]["base_stat"]
         self.speed = self.getpokemon["stats"][5]["base_stat"]
 
-        ajouter_un_pokemon(self.id,self.name,self.type_pokemon1,self.type_pokemon2,self.hp,self.attack,self.defense,self.speed,self.image,self.image_shiny)
+        ajouter_un_pokemon(self.id,self.name,self.type_pokemon1,self.type_pokemon2,self.type_pokemon1_assests,self.type_pokemon2_assests,self.hp,self.attack,self.defense,self.speed,self.image,self.image_shiny)
 #cree la table
 def cree_la_table():
     conn = connect(lien_vers_le_fichier )
     c = conn.cursor()
-    c.execute("CREATE TABLE IF NOT EXISTS pokemon (id INTEGER PRIMARY KEY,name TEXT,type_pokemon1 TEXT,type_pokemon2 TEXT,hp INTEGER,attack INTEGER,defense INTEGER,speed INTEGER,image TEXT,image_shiny TEXT)")
+    c.execute("CREATE TABLE IF NOT EXISTS pokemon (id INTEGER PRIMARY KEY,name TEXT,type_pokemon1 TEXT,type_pokemon2 TEXT,type_assets_1 TEXT,type_assets_2 TEXT,hp INTEGER,attack INTEGER,defense INTEGER,speed INTEGER,image TEXT,image_shiny TEXT)")
     conn.commit()
 #reset la table
 def reset():
@@ -41,10 +44,10 @@ def recuper_les_stats_des_pokemon():
     c.execute("SELECT * FROM pokemon")
     return c.fetchall()
 
-def ajouter_un_pokemon(id,name,type_pokemon1,type_pokemon2,hp,attack,defense,speed,image,image_shiny):
+def ajouter_un_pokemon(id,name,type_pokemon1,type_pokemon2,type_assets_1,type_assets_2,hp,attack,defense,speed,image,image_shiny):
     conn = connect(lien_vers_le_fichier)
     c = conn.cursor()
-    c.execute("INSERT INTO pokemon VALUES (?,?,?,?,?,?,?,?,?,?)",(id,name,type_pokemon1,type_pokemon2,hp,attack,defense,speed,image,image_shiny))
+    c.execute("INSERT INTO pokemon VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",(id,name,type_pokemon1,type_pokemon2,type_assets_1,type_assets_2,hp,attack,defense,speed,image,image_shiny))
     conn.commit()
 
 def supprimer_un_pokemon(name):
