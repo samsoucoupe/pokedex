@@ -8,26 +8,30 @@
 <body>
 <table>
     <tr>
-
+        <th>id</th>
         <th>name</th>
-        <th>type</th>
+        <th>type de base</th>
+        <th>type secondaire</th>
         <th>hp</th>
         <th>attack</th>
         <th>defense</th>
         <th>speed</th>
         <th>image</th>
+        <th>image shiny</th>
     </tr>
     {% for pokemon in pokemons %}
-    <tr>
-        <td>{{pokemon.name}}</td>
-        <td>{{pokemon.type}}</td>
-        <td>{{pokemon.hp}}</td>
-        <td>{{pokemon.attack}}</td>
-        <td>{{pokemon.defense}}</td>
-        <td>{{pokemon.speed}}</td>
-        
-        <td><img src="{{ pokemon.image }}" alt="pokemon image"></td>
-    </tr>
+        <tr>
+            <td>{{ pokemon.id }}</td>
+            <td>{{pokemon.name}}</td>
+            <td>{{pokemon.type_pokemon1}}</td>
+            <td>{{pokemon.type_pokemon2}}</td>
+            <td>{{pokemon.hp}}</td>
+            <td>{{pokemon.attack}}</td>
+            <td>{{pokemon.defense}}</td>
+            <td>{{pokemon.speed}}</td>
+            <td><img src="{{ pokemon.image }}" alt="pokemon image"></td>
+            <td><img src="{{ pokemon.image_shiny }}" alt="pokemon image shiny"></td>
+        </tr>
     {% endfor %}
 
 </body>
