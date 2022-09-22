@@ -10,3 +10,7 @@ img {
 body{
     background-color:var(--main-bg-color);
 }
+
+.type{
+    background: fuchsia;
+}
