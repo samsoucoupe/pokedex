@@ -10,10 +10,16 @@ app = Flask(__name__)
 liste_pokemon=[]
 #ldb.reset()
 #ldb.cree_la_table()
-for i in range(1, 10):
-    ldb.pokemon(i)
+run=True
+i=1
+while run:
+    try:
+        print(i)
+        ldb.pokemon(i)
+        i+=1
+    except:
+        run=False
 
-print(ldb.recuper_les_stats_des_pokemon())
 liste_pokemon=ldb.recuper_les_stats_des_pokemon()
 @app.route('/')
 def pokedex():  # put application's code here

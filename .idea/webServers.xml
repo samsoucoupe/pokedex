@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7c1cb23b-6cb3-44c7-bb33-ef4c06e89ef6" name="amazon bot trading" url="http://ubuntu@ec2-13-39-14-84.eu-west-3.compute.amazonaws.com">
+        <fileTransfer rootFolder="/home/ubuntu" accessType="SFTP" host="ec2-13-39-14-84.eu-west-3.compute.amazonaws.com" port="22" sshConfigId="2f32a372-f170-4332-91ec-64d72aef6b2d" sshConfig="ubuntu@ec2-13-39-14-84.eu-west-3.compute.amazonaws.com:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
