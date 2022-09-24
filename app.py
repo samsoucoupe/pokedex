@@ -14,18 +14,21 @@ run=True
 i=1
 while run:
     try:
-        print(i)
         ldb.pokemon(i)
         i+=1
     except:
         run=False
 
 liste_pokemon=ldb.recuper_les_stats_des_pokemon()
+
+
 @app.route('/')
 def pokedex():  # put application's code here
     return render_template('base.html',pokemons=liste_pokemon)
 
-
+@app.route('/<int:id>')
+def pokemon(id):
+    return render_template('poke.html',pokemon=liste_pokemon[id-1])
 
 if __name__ == '__main__':
     app.run()

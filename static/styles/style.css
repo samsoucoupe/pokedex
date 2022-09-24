@@ -1,6 +1,8 @@
 :root{
     --main-bg-color: #fff0fA;
+    --secondary-bg-color: #fff;
     --card-size:150px;
+    --font-size: 1.5rem;
 }
 img {
     width: var(--card-size);
@@ -11,6 +13,36 @@ body{
     background-color:var(--main-bg-color);
 }
 
-.type{
-    background: fuchsia;
+
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.card img{
+    border-radius: 5px 5px 5px 5px;
+    width: var(--card-size);
+    height: var(--card-size);
+    margin: 10px;
+    display: inline-block;
+}
+
+.type img{
+    width: var(--font-size);
+    height: var(--font-size);
+}
+.type td{
+    font-size: var(--font-size);
 }
