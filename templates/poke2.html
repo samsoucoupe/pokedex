@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class = container>
+        <div class = card>
+            <div class = image>
+                <img href = "#" src="{{ pokemon.image }}">
+                <img href = "#" src="{{ pokemon.image_shiny}}">
+            </div>
+            <div class = content>
+                <h4><b>{{pokemon.name}}</b></h4>
+
+                <h4>id {{pokemon.id }}</h4>
+                <h4>name {{pokemon.name}}</h4>
+                <h4>type de base {{pokemon.type_pokemon1}}  <img class="type" src="{{ pokemon.type_pokemon1_assests }}"></h4>
+                <h4>type secondaire {{pokemon.type_pokemon2}} <img class="type" src="{{ pokemon.type_pokemon2_assests }}"> </h4>
+                <h4>hp {{pokemon.hp}}</h4>
+                <h4>attack {{pokemon.attack}}</h4>
+                <h4>defense {{pokemon.defense}}</h4>
+                <h4>speed {{pokemon.speed}}</h4>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -28,7 +28,7 @@ def pokedex():  # put application's code here
 
 @app.route('/<int:id>')
 def pokemon(id):
-    return render_template('poke.html',pokemon=liste_pokemon[id-1])
+    return render_template('poke2.html',pokemon=liste_pokemon[id-1])
 
 if __name__ == '__main__':
     app.run()
